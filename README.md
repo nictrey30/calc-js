@@ -1,2 +1,1 @@
-# calc-js
-calculator app in JS
+#Calculator app in JS
