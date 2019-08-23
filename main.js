@@ -33,6 +33,46 @@ let updateDisplayVal = e => {
 for (let i = 0; i < calcNumBtns.length; i++) {
   calcNumBtns[i].addEventListener('click', updateDisplayVal, false);
 }
+let performOperation = e => {
+  let operator = e.target.innerText;
+  switch (operator) {
+    case '+':
+      pendingVal = displayVal;
+      displayVal = '0';
+      displayValElement.innerText = displayVal;
+      evalStringArray.push(pendingVal);
+      evalStringArray.push('+');
+      break;
+    case '-':
+      pendingVal = displayVal;
+      displayVal = '0';
+      displayValElement.innerText = displayVal;
+      evalStringArray.push(pendingVal);
+      evalStringArray.push('-');
+      break;
+    case 'x':
+      pendingVal = displayVal;
+      displayVal = '0';
+      displayValElement.innerText = displayVal;
+      evalStringArray.push(pendingVal);
+      evalStringArray.push('*');
+      break;
+    case '÷':
+      pendingVal = displayVal;
+      displayVal = '0';
+      displayValElement.innerText = displayVal;
+      evalStringArray.push(pendingVal);
+      evalStringArray.push('/');
+      break;
+    case '=':
+      evalStringArray.push(displayVal);
+      let evaluation = eval(evalStringArray.join(' '));
+      displayVal = evaluation;
+      displayValElement.innerText = displayVal;
+      evalStringArray = [];
+      break;
+  }
+};
 
 for (let i = 0; i < calcOperatorBtns.length; i++) {
   calcOperatorBtns[i].addEventListener('click', performOperation, false);
@@ -50,4 +90,11 @@ clearBtn.onclick = e => {
 };
 backspaceBtn.onclick = () => {
   let lengthOfDisplayVal = displayVal.length;
+  displayVal = displayVal.slice(0, lengthOfDisplayVal - 1);
+  if (displayVal === '') displayVal = '0';
+  displayValElement.innerText = displayVal;
+};
+decimalBtn.onclick = () => {
+  if (!displayVal.includes('.')) displayVal += '.';
+  displayValElement.innerText = displayVal;
 };
