@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400&display=swap');
+/* css reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: url(img/bg.png) no-repeat center center/cover;
+  color: #f4f4f4;
+  height: 100vh;
+  width: 100vw;
+}
+.header {
+  margin: 40px auto;
+  width: 80%;
+}
+.header h1 {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.25rem;
+  color: rgba(77, 77, 155, 0.863);
+  text-shadow: 2px 2px darkblue;
+}
+.container {
+  display: flex;
+  margin: 9rem auto;
+  width: 16rem;
+  height: 24.5rem;
+}
+/* #calc-parent {
+  margin: auto;
+} */
+.calc-btn {
+  background-color: #f4f4f4;
+  color: black;
+  width: 4rem;
+  height: 3.5rem;
+  border: 0.1px solid gray;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 100;
+  padding: 0.8rem 0;
+}
+.calc-btn:hover {
+  background-color: orange;
+}
+.row {
+  display: flex;
+}
+.container #calc-parent .row:first-child {
+  height: 4.6rem;
+}
+#calc-parent .row div:last-child {
+  font-weight: 400;
+}
+#calc-parent .row div:last-child:hover {
+  color: rgb(49, 49, 161);
+}
+#calc-parent .row #calc-display-val {
+  font-weight: 100;
+  color: white;
+}
+
+/* buttons */
+#calc-0,
+#calc-backspace {
+  flex: 2;
+}
+#calc-decimal,
+#calc-equals {
+  flex: 1;
+}
+
+#calc-display-val {
+  width: 100%;
+  height: 100%;
+  background: rgb(49, 49, 161);
+  font-size: 2.6rem;
+  font-weight: 100;
+  overflow: hidden;
+  text-align: right;
+  padding: 0.6rem;
+  /* nowrap	Sequences of whitespace will collapse into a single whitespace. Text will never wrap to the next line. The text continues on the same line until a <br> tag is encountered */
+  white-space: nowrap;
+  border-radius: 7px 7px 0 0;
+}
+.calc-btn-operator {
+  background-color: orange;
+  color: white;
+}
+
+#calc-clear:hover,
+#calc-backspace:hover {
+  background-color: rgb(49, 49, 161);
+  color: white;
+  border-color: rgb(49, 49, 161);
+}
