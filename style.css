@@ -21,8 +21,7 @@ body {
   text-align: center;
   font-weight: 400;
   letter-spacing: 0.25rem;
-  color: rgba(77, 77, 155, 0.863);
-  text-shadow: 2px 2px darkblue;
+  color: #f4f4f4c7;
 }
 .container {
   display: flex;
